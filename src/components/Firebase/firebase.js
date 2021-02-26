@@ -1,4 +1,5 @@
 import app from 'firebase/app';
+import 'firebase/auth';
 
 //Web app's Firebase configuration
 const firebaseConfig = {
@@ -12,13 +13,37 @@ const firebaseConfig = {
 };
 
 class Firebase {
-
     /**
      * Firebase constructor
      */
     constructor() {
         app.initializeApp(firebaseConfig);
+        this.auth = app.auth();
     }
+
+    /**
+     * Registration
+     * @param email
+     * @param password
+     */
+    signupUser = (email, password) => {
+        this.auth.createUserWithEmailAndPassword(email, password);
+    }
+
+    /**
+     * Login
+     * @param email
+     * @param password
+     */
+    loginUser = (email, password) => {
+        this.auth.signInWithEmailAndPassword(email, password);
+    }
+
+    signOutUser = () => {
+        this.auth.signOut();
+    }
+
+
 
 }
 
