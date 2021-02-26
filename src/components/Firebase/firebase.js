@@ -27,7 +27,7 @@ class Firebase {
      * @param password
      */
     signupUser = (email, password) => {
-        this.auth.createUserWithEmailAndPassword(email, password);
+        return this.auth.createUserWithEmailAndPassword(email, password);
     }
 
     /**
