@@ -36,7 +36,7 @@ class Firebase {
      * @param password
      */
     loginUser = (email, password) => {
-        this.auth.signInWithEmailAndPassword(email, password);
+        return this.auth.signInWithEmailAndPassword(email, password);
     }
 
     signOutUser = () => {

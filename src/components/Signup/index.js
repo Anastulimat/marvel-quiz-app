@@ -76,7 +76,6 @@ const Signup = (props) => {
             <div className="slContainer">
                 
                 <div className="formBoxLeftSignup"/>
-                
                 <div className="formBoxRight">
                     <div className="formContent">
                         {errorMsg}
