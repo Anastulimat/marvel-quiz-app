@@ -4,10 +4,6 @@ import {FirebaseContext} from '../Firebase';
 
 const Signup = (props) => {
 
-    /**
-     * Firebase context
-     * @type {null}
-     */
     const firebaseContext = useContext(FirebaseContext);
 
     /**
@@ -57,9 +53,15 @@ const Signup = (props) => {
      */
     const handleSubmit = (e) => {
         e.preventDefault();
-        const {email, password} = formData;
+        const {pseudo, email, password} = formData;
         firebaseContext.signUpUser(email, password)
-            .then(user => {
+            .then((authUser) => {
+                return firebaseContext.addUser(authUser.user.uid).set({
+                   pseudo: pseudo,
+                   email: email
+                });
+            })
+            .then(() => {
                 setFormData({...userData});
                 props.history.push('/welcome')
             })
