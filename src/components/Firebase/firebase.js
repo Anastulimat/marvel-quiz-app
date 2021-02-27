@@ -39,8 +39,20 @@ class Firebase {
         return this.auth.signInWithEmailAndPassword(email, password);
     }
 
+    /**
+     * Sign out
+     */
     signOutUser = () => {
         return this.auth.signOut();
+    }
+
+    /**
+     *
+     * @param email
+     * @returns {Promise<void>}
+     */
+    passwordReset = (email) => {
+        return this.auth.sendPasswordResetEmail(email);
     }
 
 
