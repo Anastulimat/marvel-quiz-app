@@ -58,7 +58,7 @@ const Signup = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const {email, password} = formData;
-        firebaseContext.signupUser(email, password)
+        firebaseContext.signUpUser(email, password)
             .then(user => {
                 setFormData({...userData});
                 props.history.push('/welcome')

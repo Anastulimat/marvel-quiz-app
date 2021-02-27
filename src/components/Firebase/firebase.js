@@ -26,7 +26,7 @@ class Firebase {
      * @param email
      * @param password
      */
-    signupUser = (email, password) => {
+    signUpUser = (email, password) => {
         return this.auth.createUserWithEmailAndPassword(email, password);
     }
 
@@ -40,7 +40,7 @@ class Firebase {
     }
 
     signOutUser = () => {
-        this.auth.signOut();
+        return this.auth.signOut();
     }
 
 
