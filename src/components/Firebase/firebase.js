@@ -61,7 +61,7 @@ class Firebase {
      *
      * @param uid
      */
-    addUser = (uid) =>  {
+    userCollection = (uid) =>  {
         return this.db.doc(`users/${uid}`);
     }
 

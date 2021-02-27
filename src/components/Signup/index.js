@@ -56,7 +56,7 @@ const Signup = (props) => {
         const {pseudo, email, password} = formData;
         firebaseContext.signUpUser(email, password)
             .then((authUser) => {
-                return firebaseContext.addUser(authUser.user.uid).set({
+                return firebaseContext.userCollection(authUser.user.uid).set({
                    pseudo: pseudo,
                    email: email
                 });
